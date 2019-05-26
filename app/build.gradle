@@ -47,9 +47,9 @@ android {
 play {
     // This variable cannot be a string, only a file
     //serviceAccountCredentials = System.getenv('TRAVIS_CI_SERVICE_ACCOUNT_CREDENTIALS')
-    serviceAccountCredentials = file('api-8830862669087182115-516792-6e644895026f.json.enc')
+    track = "production"
+    serviceAccountCredentials = file('api-8830862669087182115-516792-6e644895026f.json')
 }
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
