@@ -24,4 +24,5 @@ android:
 
 # The actual script which would be executed when a build is initiated.
 script:
+  - "yes | sdkmanager --licenses"
   - "./gradlew assembleRelease --scan -s"    
