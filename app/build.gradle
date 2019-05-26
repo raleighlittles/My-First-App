@@ -45,7 +45,9 @@ android {
 }
 
 play {
-    serviceAccountCredentials = System.getenv('TRAVIS_CI_SERVICE_ACCOUNT_CREDENTIALS')
+    // This variable cannot be a string, only a file
+    //serviceAccountCredentials = System.getenv('TRAVIS_CI_SERVICE_ACCOUNT_CREDENTIALS')
+    serviceAccountCredentials = file('api-8830862669087182115-516792-9e6fd59df689.json')
 }
 
 
