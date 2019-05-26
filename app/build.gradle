@@ -4,7 +4,6 @@ plugins {
     id 'com.github.triplet.play' version '2.2.1'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
-    id 'com.gradle.build-scan' 
 }
 
 buildScan {
