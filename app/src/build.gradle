@@ -1,0 +1,63 @@
+
+plugins {
+    id 'com.android.application'
+    id 'com.github.triplet.play' version '2.2.1'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+buildScan {
+    termsOfServiceUrl = "https://gradle.com/terms-of-service"
+    termsOfServiceAgree = "yes"
+}
+
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.raleigh.myfirstapp"
+        minSdkVersion 26
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            // Keeping this here is not a really good idea, but for the purposes of this example, it's sort of okay.
+            // Nobody is going to be downloading this application in the first place.
+            storeFile file("raleigh.jks")
+            storePassword = System.getenv('TRAVIS_CI_SIGNING_STORE_PASSWORD')
+            keyAlias "MyReleaseKey"
+            keyPassword = System.getenv('TRAVIS_CI_SIGNING_KEY_PASSWORD')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+play {
+    // This variable cannot point to a string, only a file.
+    //serviceAccountCredentials = System.getenv('TRAVIS_CI_SERVICE_ACCOUNT_CREDENTIALS')
+    serviceAccountCredentials = file("api-8830862669087182115-516792-9e6fd59df689.json")
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
