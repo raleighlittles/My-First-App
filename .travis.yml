@@ -16,9 +16,7 @@ android:
   - android-sdk-preview-license-52d11cd2
   - google-gdk-license-.+
 before_install:
-- openssl aes-256-cbc -K $encrypted_461dd72bb874_key -iv $encrypted_461dd72bb874_iv
-  -in app/api-8830862669087182115-516792-9e6fd59df689.json.enc -out app/api-8830862669087182115-516792-9e6fd59df689.json
-  -d
+- openssl aes-256-cbc -K $encrypted_b4ee753593fc_key -iv $encrypted_b4ee753593fc_iv in app/api-8830862669087182115-516792-6e644895026f.json.enc -out app/api-8830862669087182115-516792-6e644895026f.json -d
 - yes | sdkmanager "platforms;android-28"
 - yes | sdkmanager "build-tools;28.0.3"
 script:
