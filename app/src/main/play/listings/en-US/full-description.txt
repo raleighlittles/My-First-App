@@ -1,0 +1,3 @@
+The "Build your first app" example that Google has you do, here: https://developer.android.com/training/basics/firstapp
+
+This was a test project created to familiarize myself with the process of publishing Android applications.
