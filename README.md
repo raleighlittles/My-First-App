@@ -1,4 +1,4 @@
-https://travis-ci.org/raleighlittles/My-First-App.svg?branch=master
+![build-badge](https://travis-ci.org/raleighlittles/My-First-App.svg?branch=master)
 
 # Background
 
