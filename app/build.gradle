@@ -30,7 +30,7 @@ android {
             // Nobody is going to be downloading this application in the first place.
             storeFile file("raleigh.jks")
             storePassword = System.getenv('TRAVIS_CI_SIGNING_STORE_PASSWORD')
-            keyAlias "MyReleaseKey"
+            keyAlias "key0"
             keyPassword = System.getenv('TRAVIS_CI_SIGNING_KEY_PASSWORD')
         }
     }
